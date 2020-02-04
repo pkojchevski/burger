@@ -1,0 +1,26 @@
+.title {
+  line-height: 46px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ed2553;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.title:before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  background: #ed2553;
+}
+.Check svg {
+  margin: auto;
+}
+
+.path {
+  stroke-dashoffset: 0 !important;
+}

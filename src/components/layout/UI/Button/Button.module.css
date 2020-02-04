@@ -1,0 +1,107 @@
+@import "../../../../assets/colors/colors.css";
+
+.Button {
+  width: 12rem;
+  height: 2.5em;
+  position: relative;
+  background: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin: 1em;
+  outline: none;
+  transition: all 0.2s;
+  z-index: 111;
+}
+
+.redOutline {
+  border: 0.2em solid var(--red-secondary);
+  color: var(--red-secondary);
+}
+
+.yellowOutline {
+  color: var(--yellow);
+  border: 0.2em solid var(--yellow);
+}
+
+.coverTop {
+  z-index: 999;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12%;
+  height: 0.3em;
+  right: 20%;
+  top: -0.25em;
+  transform: skewX(-45deg);
+  transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+  /* z-index: 111; */
+}
+.coverBot {
+  display: block;
+  position: absolute;
+  width: 13%;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  transition: all 2s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.Button:active .coverTop {
+  right: 80%;
+}
+
+.Button:active .coverBot {
+  left: 80%;
+}
+
+.Button:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.btnYellow {
+  background: var(--yellow);
+}
+
+.btnWhite {
+  background: white;
+}
+
+.btnRed {
+  background: var(--red-secondary);
+}
+
+.Button:not(:disabled) {
+  animation: enable 0.5s ease-out;
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+}
+
+.Button:disabled:focus {
+  cursor: not-allowed;
+}
+
+.Button.btnYellow:active {
+  background-color: var(--yellow);
+}
+
+.Button.btnRed:active {
+  background-color: var(--red-secondary);
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../../assets/colors/colors.css";
+.Charger {
+  width: 4rem;
+  height: 2.5em;
+  border: 2px solid var(--red-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.Charger div {
+  margin: 0px 3px;
+  width: 0.75em;
+  height: 1.2em;
+  border: 1px solid var(--red-secondary);
+  transition: all 0.3s ease-in;
+}
+
+.L1,
+.L2,
+.L3,
+.L4 {
+  background-color: var(--red-secondary);
+  transition: all 1s ease-in;
+}
+
+@keyframes chargeL1 {
+  to {
+    background-color: var(--red-secondary);
+  }
+}

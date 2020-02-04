@@ -1,0 +1,24 @@
+@import "../../assets/colors/colors.css";
+
+.Pricetag {
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+}
+
+.Euro {
+  font-size: 1em;
+  padding: 0.5px 5px;
+  position: absolute;
+  top: 0;
+}
+
+.Price {
+  font-size: 1.5em;
+  margin-left: 1rem;
+  text-align: center;
+}

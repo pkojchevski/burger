@@ -1,0 +1,269 @@
+@import "../../assets/colors/colors.css";
+
+.box {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  float: left;
+  padding: 60px 50px 40px 50px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  transform: scale(1);
+  z-index: 5;
+}
+
+.box.back {
+  transform: scale(0.95);
+  top: -20px;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.box:before {
+  content: "";
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: -10px;
+  background: rgba(255, 255, 255, 0.6);
+  left: 0;
+  transform: scale(0.95);
+  z-index: -1;
+}
+
+.overBoxTitle {
+  color: var(--yellow);
+}
+
+.overBoxTitle:before {
+  background: var(--yellow);
+}
+
+.overBoxTitle {
+  width: 100%;
+  /* float: left; */
+  line-height: 46px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--yellow);
+  position: relative;
+  z-index: 111;
+  margin-bottom: 2rem;
+}
+
+.overBoxTitle:before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  background: var(--yellow);
+}
+
+.overBoxInput,
+.overBoxButton,
+.materialButton .shape:before,
+.materialButton .shape:after {
+  transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.materialButton,
+.alt2,
+.materialButton .shape,
+.alt2 .shape,
+.box {
+  transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button,
+.button button {
+  width: 100%;
+  float: left;
+}
+
+.overBoxInput,
+.overBoxButton {
+  margin-top: 30px;
+  height: 70px;
+}
+
+.overBoxInput,
+.overBoxInput input,
+.overBoxButton,
+.overBoxButton button {
+  position: relative;
+}
+
+.overBoxInput input {
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+}
+
+.overBoxInput input,
+.overBoxInput label,
+.overBoxButton button {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 300;
+}
+
+.overBoxInput:before,
+.overBoxInput .spin {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.overBoxInput:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.overBoxInput .spin {
+  background: rgba(255, 255, 255, 1);
+}
+
+.overBoxInput:before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.click-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--red-secondary);
+  border-radius: 50%;
+}
+
+.overBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 60px 50px 40px 50px;
+}
+
+.overBoxTitle,
+.overBoxButton,
+.overBoxInput {
+  /* z-index: 111; */
+  position: relative;
+  color: var(--yellow) !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.overBoxTitle {
+  width: 80%;
+}
+
+.overBoxInput {
+  margin-top: 20px;
+}
+
+.overBoxInput input,
+.overBoxInput label {
+  color: #fff;
+}
+
+.overBox .materialButton,
+.overBox .materialButton .shape,
+.overBox .alt2,
+.overBox .alt2 .shape {
+  display: block;
+}
+
+.materialButton,
+.alt2 {
+  border-radius: 50%;
+  background: var(--red-secondary);
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  cursor: pointer;
+  z-index: 100;
+  transform: translate(0%, 0%);
+}
+
+.materialButton .shape,
+.alt2 .shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.materialButton .shape:before,
+.alt2 .shape:before,
+.materialButton .shape:after,
+.alt2 .shape:after {
+  content: "";
+  background: yellow;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(360deg);
+}
+
+.materialButton .shape:before,
+.alt2 .shape:before {
+  width: 25px;
+  height: 4px;
+}
+
+.materialButton .shape:after,
+.alt2 .shape:after {
+  height: 25px;
+  width: 4px;
+}
+
+.materialButton.active,
+.alt2.active {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%) rotate(0deg);
+}
+
+.maxWidth {
+  height: 700px;
+  width: 700px;
+}
+
+.minWidth {
+  height: 70px;
+  width: 70px;
+}
+
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.materialContainer {
+  /* width: 100%; */
+  /* height: 70%; */
+  /* max-width: 460px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

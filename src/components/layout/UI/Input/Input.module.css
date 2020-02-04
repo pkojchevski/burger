@@ -1,0 +1,85 @@
+@import "../../../../assets/colors/colors.css";
+
+.InputContainer {
+  position: relative;
+  margin: 3rem auto;
+  z-index: 111;
+  /* width: 80%; */
+}
+
+/* hide browser specific style */
+
+.InputElement:focus {
+  outline: 0;
+  box-shadow: 0;
+}
+
+.InputElement::placeholder {
+  color: transparent;
+}
+
+.InputElement {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.InputElement.white {
+  border-bottom: 3px solid white;
+  color: #fff;
+}
+
+.InputElement.black {
+  border-bottom: 3px solid #ccc;
+  color: #ccc;
+}
+
+.InputElement:focus + .Label,
+.InputElement:not(:placeholder-shown) + .Label {
+  transform: translateY(-1.2rem) scale(0.8);
+  opacity: 0.8;
+}
+
+.Label.white {
+  color: #fff;
+}
+
+.Label.black {
+  color: #ccc;
+}
+
+.Label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  padding: 0.5rem 1rem;
+  transition: transform 0.25s, opacity 0.25s ease-in-out;
+  transform-origin: 0 0;
+  z-index: -1;
+}
+
+.InputElement.Invalid:focus {
+  border-bottom: 3px solid var(--red-primary);
+}
+
+.InputElement.Valid:focus,
+.InputElement.Valid {
+  border-bottom: 3px solid green;
+}
+
+.InputElement.Valid + .Label {
+  transform: translateY(-1.2rem) scale(0.8);
+  opacity: 0.8;
+}
+
+@media (min-width: 590px) {
+}

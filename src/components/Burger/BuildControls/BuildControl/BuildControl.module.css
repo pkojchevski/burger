@@ -1,0 +1,123 @@
+@import "../../../../assets/colors/colors.css";
+
+.BuildControl {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.BuildControl .icon {
+  display: block;
+  font: inherit;
+  padding: 5px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  z-index: 80;
+}
+
+.Label {
+  padding: 10px;
+  font-weight: bold;
+  width: 60px;
+  color: var(--red-secondary);
+  font-size: 1rem;
+}
+.Price {
+  width: 2.3em;
+  height: 2.3em;
+  border: 1px solid var(--red-secondary);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 5;
+}
+.Price:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--yellow);
+  position: absolute;
+  left: -5px;
+  z-index: -1;
+}
+.Price::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--yellow);
+  position: absolute;
+  right: -5px;
+  z-index: -1;
+}
+
+.AddIconButton,
+.MinusIconButton {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  box-shadow: none !important;
+  border-radius: 50%;
+}
+
+.AddIconButton:active,
+.AddIconButton:focus,
+.AddIconButton:hover,
+.MinusIconButton:active,
+.MinusIconButton:focus,
+.MinusIconButton:hover {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 100%;
+}
+
+.AddIconButton rect,
+.MinusIconButton rect {
+  transition: all 0.5s ease-out;
+}
+
+.AddIconButton:active rect,
+.MinusIconButton:active rect {
+  fill: blue;
+  transform: scaleX(1.2);
+}
+
+.MinusIconButton:disabled rect,
+.MinusIconButton:disabled path,
+.AddIconButton:disabled rect,
+.AddIconButton:disabled path {
+  fill: var(--red-gray);
+}
+
+.MinusIconButton:disabled:focus rect,
+.MinusIconButton:disabled:focus path,
+.AddIconButton:disabled:focus rect,
+.AddIconButton:disabled:focus path {
+  fill: var(--red-gray);
+}
+
+.MinusIconButton:not(:disabled) svg,
+.AddIconButton:not(:disabled) svg {
+  animation: enable 0.5s esae-in;
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

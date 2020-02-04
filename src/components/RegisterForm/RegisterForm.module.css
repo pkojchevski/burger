@@ -1,0 +1,33 @@
+
+
+.ContactData {
+  /* margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  z-index: 111; */
+}
+
+.Check svg{
+  margin: auto;
+  width:60px;
+  height:60px;
+}
+
+.Check svg path {
+  fill: #f2d50f;
+  /* stroke-width:2; */
+  /* stroke-dashoffset: 800; */
+  stroke-dasharray: 100%;
+  animation: padda 8s linear;
+
+}
+
+
+@keyframes padda {
+  from {
+    stroke-dashoffset: 0%;
+  }
+  to {
+    stroke-dashoffset: 100%;
+  }
+}
