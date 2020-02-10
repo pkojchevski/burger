@@ -9,34 +9,75 @@ import Auth from "./containers/Auth/Auth";
 import Logout from "./containers/Auth/Logout/Logout";
 import * as actions from "./store/actions/index";
 import classes from "./App.module.css";
+import { useTransition, animated, config } from "react-spring";
+import useRouter from "./hoc/useRouter";
 
 const App = ({ onTryAutoSignUp, isAuth, purchased }) => {
   useEffect(() => {
     onTryAutoSignUp();
   }, []);
+  const { location } = useRouter();
+  const transition = useTransition(location, location => location.pathname, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  });
 
-  let routes = (
-    <Switch>
-      <Route path="/auth" exact component={Auth} />
-      <Route path="/" exact component={BurgerBuilder} />
-      <Redirect to="/" />
-    </Switch>
-  );
-  if (isAuth) {
-    routes = (
-      <Switch>
-        {/* <Route path="/checkout" exact component={Checkout} /> */}
-        <Route path="/orders" exact component={OrderComponent} />
-        <Route path="/logout" exact component={Logout} />
-        <Route path="/auth" exact component={Auth} />
-        <Route path="/" exact component={BurgerBuilder} />
-        <Redirect to="/" />
-      </Switch>
-    );
-  }
+  // let routes =
+  // {transition.map(({item, props, key}) => (
+  //     <animated.div key={key} style={props}>
+  //       <Switch location={item}>
+  //        <Route path="/auth" exact component={Auth} />
+  //        <Route path="/" exact component={BurgerBuilder} />
+  //        <Redirect to="/" />
+  //       </Switch>
+  //     </animated.div>
+  //   ))};
+  // <Switch>
+  //   <Route path="/auth" exact component={Auth} />
+  //   <Route path="/" exact component={BurgerBuilder} />
+  //   <Redirect to="/" />
+  // </Switch>
+
+  // if (isAuth) {
+  //   routes = (
+  //     <Switch>
+  //       {/* <Route path="/checkout" exact component={Checkout} /> */}
+  //       <Route path="/orders" exact component={OrderComponent} />
+  //       <Route path="/logout" exact component={Logout} />
+  //       <Route path="/auth" exact component={Auth} />
+  //       <Route path="/" exact component={BurgerBuilder} />
+  //       <Redirect to="/" />
+  //     </Switch>
+  //   );
+  // }
   return (
     <div className={classes.App}>
-      <Layout>{routes}</Layout>
+      <Layout>
+        {!isAuth
+          ? transition.map(({ item, props, key }) => (
+              <animated.div key={key} style={props}>
+                <Switch location={item}>
+                  <Route path="/auth" exact component={Auth} />
+                  <Route path="/" exact component={BurgerBuilder} />
+                  <Redirect to="/" />
+                </Switch>
+              </animated.div>
+            ))
+          : transition.map(({ item, props, key }) => (
+              <animated.div key={key} style={props}>
+                <Switch location={item}>
+                  {/* <Route path="/checkout" exact component={Checkout} /> */}
+                  <Route path="/orders" exact component={OrderComponent} />
+                  <Route path="/logout" exact component={Logout} />
+                  <Route path="/auth" exact component={Auth} />
+                  <Route path="/" exact component={BurgerBuilder} />
+                  <Redirect to="/" />
+                </Switch>
+              </animated.div>
+            ))}
+        ;
+      </Layout>
     </div>
   );
 };

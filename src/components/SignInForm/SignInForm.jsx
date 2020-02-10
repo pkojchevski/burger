@@ -6,12 +6,10 @@ import Input from "../layout/UI/Input/Input";
 import { connect } from "react-redux";
 import Spinner from "../layout/UI/Spinner/Spinner";
 import Wrapper from "../../hoc/Wrapper";
-import { ReactComponent as CheckIcon } from "../../assets/icons/check.svg";
 import { useSpring, animated } from "react-spring";
 
 const SignInForm = ({ loading, onSignInClick, error, isAuth }) => {
   const props = useSpring({ x: 0, from: { x: 80 } });
-  const [path, setPath] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
   const [authForm, setAuthForm] = useState({
     controls: {

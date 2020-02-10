@@ -18,8 +18,8 @@ const Orders = ({ loading, orders, onFetchOrders }) => {
     );
   }, []);
   return (
-    <div className={classes.Orders}>
-      {!loading ? (
+    <div className={classes.AbsoluteWraper}>
+      <div className={classes.Orders}>
         <div>
           {orders.map(order => (
             <Order
@@ -29,9 +29,7 @@ const Orders = ({ loading, orders, onFetchOrders }) => {
             />
           ))}
         </div>
-      ) : (
-        <Spinner />
-      )}
+      </div>
     </div>
   );
 };

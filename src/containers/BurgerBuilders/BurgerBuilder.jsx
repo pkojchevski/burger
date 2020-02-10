@@ -4,7 +4,6 @@ import Burger from "../../components/Burger/Burger.component";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls.component";
 import Modal from "../../components/layout/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
-import Spinner from "../../components/layout/UI/Spinner/Spinner";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 import Pricetag from "../../components/Pricetag/Pricetag";
@@ -41,7 +40,7 @@ const BurgerBuilder = ({
 
     return () => {
       console.log("return");
-      onSetOrderAfterLoginFail();
+      // onSetOrderAfterLoginFail();
     };
   }, []);
 
@@ -76,10 +75,11 @@ const BurgerBuilder = ({
     onInitPrice();
     setPurchasing(false);
     setOrderIsDone(true);
+    onSetOrderAfterLoginFail();
   };
 
   return (
-    <Wrapper>
+    <div>
       <div className={classes.BurgerContent}>
         {error ? <Toast message={error.message} show={true} /> : null}
         {orderIsDone ? (
@@ -108,7 +108,7 @@ const BurgerBuilder = ({
           ingrs={ingrs}
         />
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
@@ -131,8 +131,8 @@ const mapDispatchToProps = dispatch => ({
   onSetAuthRedirectPath: path => dispatch(actions.setAuthRedirectPath(path)),
   onBurgerPurchase: (orderData, token) =>
     dispatch(actions.purchaseBurger(orderData, token)),
-  onSetOrderAfterLoginFail: () => dispatch(actions.setOrderAfterLoginFail),
-  onSetOrderAfterLoginTrue: () => dispatch(actions.setOrderAfterLoginTrue),
+  onSetOrderAfterLoginFail: () => dispatch(actions.setOrderAfterLoginFail()),
+  onSetOrderAfterLoginTrue: () => dispatch(actions.setOrderAfterLoginTrue()),
   onInitPrice: () => dispatch(actions.initPrice())
 });
 

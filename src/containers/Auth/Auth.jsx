@@ -25,10 +25,12 @@ const Auth = ({
   }, [isAuth]);
 
   return (
-    <div className={classes.Auth}>
-      {isAuthWithTimeout ? <Redirect to={authRedirectPath} /> : null}
-      <AuthForm />
-      {error ? <Toast message={error.message} show={true} /> : null}
+    <div className={classes.AbsoluteWrapper}>
+      <div className={classes.Auth}>
+        {isAuthWithTimeout ? <Redirect to={authRedirectPath} /> : null}
+        <AuthForm />
+        {error ? <Toast message={error.message} show={true} /> : null}
+      </div>
     </div>
   );
 };

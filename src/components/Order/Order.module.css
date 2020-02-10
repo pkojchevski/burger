@@ -18,7 +18,7 @@
 
 .Order table tr td {
   padding: 10px;
-  text-align: center;
+  text-align: right;
 }
 
 .Order table tbody tr:last-child {

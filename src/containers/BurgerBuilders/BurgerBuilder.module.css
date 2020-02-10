@@ -1,3 +1,7 @@
+.AbsoluteWrapper {
+  position: absolute;
+}
+
 .BurgerContent {
   height: 100vh;
   display: flex;

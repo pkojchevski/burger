@@ -1,3 +1,10 @@
+.AbsoluteWrapper {
+  position: absolute;
+  width: 100vw;
+  top: 50%;
+  margin: auto;
+}
+
 .Auth {
   margin: 30px;
   width: 80%;
